@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/graph_nav"
+    app:startDestination="@id/countriesFragment">
+
+    <fragment
+        android:id="@+id/countriesFragment"
+        android:name="com.canberkbbc.kotlin_countries.ui.countries.CountriesFragment"
+        android:label="CountriesFragment">
+        <action
+            android:id="@+id/action_countriesFragment_to_countryDetailFragment"
+            app:destination="@id/countryDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/countryDetailFragment"
+        android:name="com.canberkbbc.kotlin_countries.ui.countrydetail.CountryDetailFragment"
+        android:label="CountryDetailFragment" >
+        <action
+            android:id="@+id/action_countryDetailFragment_to_countriesFragment"
+            app:destination="@id/countriesFragment" />
+        <argument
+            android:name="countryData"
+            app:argType="com.canberkbbc.kotlin_countries.data.remote.model.CountryModel" />
+    </fragment>
+</navigation>
